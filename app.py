@@ -1,6 +1,11 @@
 import streamlit as st
 import pandas as pd
 import os
+import sys
+
+# Force the root path into the system lookup to prevent cloud import blocks
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from core.ingestion import clone_repository, get_all_python_files
 from core.parser import parse_python_file
 from core.llm_client import analyze_code_structures
