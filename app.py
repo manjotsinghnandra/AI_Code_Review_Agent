@@ -12,6 +12,9 @@ st.set_page_config(page_title="AI Code Review Agent", page_icon="🤖", layout="
 st.title("🤖 Autonomous AI Code Review Agent")
 st.markdown("---")
 
+# Enforce a strict, absolute working path mapping for the cloud container environment
+target_dir = os.path.join(os.getcwd(), "cloned_repos", "active_review")
+
 # Input field for users to paste a public repository URL
 repo_url = st.text_input(
     "Enter Public GitHub Repository URL:", 
@@ -26,7 +29,6 @@ if st.button("Run Full Agentic Review", type="primary"):
         # Create visual tracking loading states
         with st.spinner("Step 1/3: Ingesting & Cloning repository down locally..."):
             try:
-                target_dir = "./cloned_repos/active_review"
                 clone_repository(repo_url, target_dir)
             except Exception as e:
                 st.error(f"Ingestion Error: {e}")
@@ -94,6 +96,7 @@ if 'review_findings' in st.session_state and st.session_state['review_findings']
         else:
             for _, row in high_conf.iterrows():
                 with st.expander(f"🔴 **[{row['severity']}]** inside `{row['target_name']}` (Line {row['line_number']})"):
+                    st.markdown(f"**File Location:** `{row.get('file_path', 'Root')}`")
                     st.markdown(f"**Category:** `{row['category']}` | **Agent Certainty Score:** `{row['confidence_score']}%`")
                     st.markdown(f"**Issue Description:** {row['comment']}")
                     st.markdown("**💡 Recommended Solution Fix:**")
@@ -108,6 +111,7 @@ if 'review_findings' in st.session_state and st.session_state['review_findings']
         else:
             for _, row in low_conf.iterrows():
                 with st.expander(f"⚠️ **[VERIFY THIS]** Suggestion inside `{row['target_name']}` (Line {row['line_number']})"):
+                    st.markdown(f"**File Location:** `{row.get('file_path', 'Root')}`")
                     st.warning(f"**Agent Confidence Warning Score:** {row['confidence_score']}% (Human review highly advised)")
                     st.markdown(f"**Heuristic Note:** {row['comment']}")
                     st.markdown("**Suggested Layout Update Snippet:**")
