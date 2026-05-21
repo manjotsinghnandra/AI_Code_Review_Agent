@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import os
-import shutil
 from core.ingestion import clone_repository, get_all_python_files
 from core.parser import parse_python_file
 from core.llm_client import analyze_code_structures
@@ -12,8 +11,8 @@ st.set_page_config(page_title="AI Code Review Agent", page_icon="🤖", layout="
 st.title("🤖 Autonomous AI Code Review Agent")
 st.markdown("---")
 
-# Enforce a strict, absolute working path mapping for the cloud container environment
-target_dir = os.path.join(os.getcwd(), "cloned_repos", "active_review")
+# Use the secure Linux temp directory for cloud cloning permissions
+target_dir = "/tmp/active_review"
 
 # Input field for users to paste a public repository URL
 repo_url = st.text_input(
