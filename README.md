@@ -1,4 +1,4 @@
-﻿# 🛡️ Autonomous AI Code Review Agent
+﻿#  Autonomous AI Code Review Agent
 
 An intelligent AI-powered source code auditing platform that autonomously ingests public GitHub repositories, parses Python files using Abstract Syntax Tree (AST) analysis, and generates confidence-rated code review findings using Large Language Models (LLMs).
 
@@ -6,27 +6,26 @@ This project is built around the principle of **Epistemic Humility**, where the 
 
 ---
 
-# 🚀 Live Demo & Repository
+#  Live Demo & Repository
 
-- 🌐 Live Application: [YOUR_STREAMLIT_DEPLOYMENT_LINK]
-- 💻 GitHub Repository: [YOUR_GITHUB_REPOSITORY_LINK]
-
----
-
-# ✨ Features
-
-- ✅ Automated GitHub repository ingestion
-- ✅ AST-based static code analysis
-- ✅ AI-powered code review generation
-- ✅ Confidence-based issue separation
-- ✅ Severity & category filtering
-- ✅ CSV export support
-- ✅ Interactive Streamlit dashboard
-- ✅ Responsible AI uncertainty reporting
+-  Live Application: https://aicodereviewagent-ekpc5w8ffiqipvekuu5cjs.streamlit.app/
 
 ---
 
-# 🧠 System Architecture
+#  Features
+
+-  Automated GitHub repository ingestion
+-  AST-based static code analysis
+-  AI-powered code review generation
+-  Confidence-based issue separation
+-  Severity & category filtering
+-  CSV export support
+-  Interactive Streamlit dashboard
+-  Responsible AI uncertainty reporting
+
+---
+
+#  System Architecture
 
 ```text
 User Input (GitHub URL)
@@ -49,7 +48,7 @@ Interactive Streamlit Dashboard
 
 ---
 
-# 🏗️ Tech Stack
+#  Tech Stack
 
 | Technology | Purpose |
 |---|---|
@@ -63,7 +62,7 @@ Interactive Streamlit Dashboard
 
 ---
 
-# 📂 Project Structure
+#  Project Structure
 
 ```text
 ai-code-reviewer/
@@ -83,7 +82,7 @@ ai-code-reviewer/
 
 ---
 
-# ⚙️ Installation
+#  Installation
 
 ## 1. Clone Repository
 
@@ -120,7 +119,7 @@ pip install -r requirements.txt
 
 ---
 
-# 🔑 Environment Variables
+#  Environment Variables
 
 Create a `.env` file in the project root:
 
@@ -130,7 +129,7 @@ GROQ_API_KEY=your_groq_api_key_here
 
 ---
 
-# ▶️ Run The Application
+#  Run The Application
 
 ```bash
 streamlit run app.py
@@ -144,7 +143,7 @@ http://localhost:8501
 
 ---
 
-# ☁️ Streamlit Cloud Deployment
+#  Streamlit Cloud Deployment
 
 ## Deployment Steps
 
@@ -165,7 +164,7 @@ GROQ_API_KEY="your_key_here"
 
 ---
 
-# 📊 Dashboard Capabilities
+#  Dashboard Capabilities
 
 - 📈 Real-time audit metrics
 - 🔴 Critical issue tracking
@@ -176,7 +175,7 @@ GROQ_API_KEY="your_key_here"
 
 ---
 
-# 🔬 Example AI Finding
+#  Example AI Finding
 
 ## Example Code
 
@@ -201,7 +200,7 @@ if discount_percentage < 0 or discount_percentage > 100:
 
 ---
 
-# 🔒 Responsible AI Design
+#  Responsible AI Design
 
 This project implements:
 - Confidence scoring
@@ -211,7 +210,7 @@ This project implements:
 
 ---
 
-# ⚠️ Known Limitations
+#  Known Limitations
 
 - Python-only support
 - Single-file analysis scope
@@ -220,7 +219,7 @@ This project implements:
 
 ---
 
-# 🚀 Future Improvements
+#  Future Improvements
 
 - Multi-language support
 - Cross-file relationship analysis
@@ -232,12 +231,12 @@ This project implements:
 
 ---
 
-# 👨‍💻 Author
+#  Author
 
 Developed as an educational AI engineering project focused on autonomous code auditing and responsible LLM-based software analysis.
 
 ---
 
-# 📄 License
+#  License
 
 This project is intended for educational and research purposes.
